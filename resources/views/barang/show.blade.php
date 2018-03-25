@@ -26,7 +26,7 @@
 							Gambar Barang
 						</div>
 						<div class="col-md-6">
-							<img src="{{asset('img/'.$barang->logo.'')}}" height="100" width="100">
+							<img src="{{asset('img/'.$barang->logo.'')}}" height="150" width="300">
 						</div>
 					</div>
 					<div class="form-group">
@@ -66,9 +66,18 @@
 							Brand Barang
 						</div>
 						<div class="col-md-6">
-							{{$barang->brand}}
+							{{$barang->brand->brand}}
 						</div>
 					</div>
+					<div class="form-group">
+						<div class="col-md-6">
+							Spesifikasi  Barang
+						</div>
+						<div class="col-md-6">
+							{{$barang->keterangan}}
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>

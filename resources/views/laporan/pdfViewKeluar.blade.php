@@ -13,7 +13,8 @@
 
 	</style>
 </head>
-<body>
+<body>		
+	<center><h4>Total Uang Masuk Dari Tanggal {{$from}} Sampai {{$to}}: Rp.{{number_format($sum)}},-</h4></center>
 			<table>
 					<thead>
 							<tr>

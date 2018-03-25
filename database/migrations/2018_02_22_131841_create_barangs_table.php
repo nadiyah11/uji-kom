@@ -29,6 +29,7 @@ class CreateBarangsTable extends Migration
                   ->on('brands')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }

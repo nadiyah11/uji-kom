@@ -16,7 +16,15 @@
 						<table  class="table table-bordered table-striped">
 						<thead>
 							<h3>Laporan</h3>
-							<a class="btn btn-primary" href="{{ url('/download-pdf2') }}">PDF</a>
+							<form action="{{ url('/download-pdf2') }}" method="get">
+									
+									<input type="hidden" name="from" value="{{$from}}">
+									<input type="hidden" name="to" value="{{$to}}">
+
+									
+									<input type="submit" name="Simpan" value="Pdf" class="btn btn-primary">
+							
+							
 							<center><h4>Total Uang Masuk Dari Tanggal {{$from}} Sampai {{$to}}: Rp.{{number_format($sum)}},-</h4></center>
 							<tr>
 								<th>No </th>
@@ -45,6 +53,7 @@
 							@endforeach
 							
 						</tbody>
+					</form>
 					</table>
 					</div>
 				</div>

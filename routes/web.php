@@ -30,7 +30,7 @@ Route::group(['middleware' => 'role:admin'], function () {
 	'as' => 'export.laporan.post',
 	'uses' => 'Tran_masukController@exportPost'
 	]);
-	Route::post('download-pdf','LaporanController@downloadPDF');
+	Route::get('download-pdf','LaporanController@downloadPDF');
 	Route::get('download-pdf2','LaporanController@downloadPDF2');
 });
 Route::group(['middleware' => 'role:admin|member'], function () {
@@ -45,3 +45,7 @@ Route::group(['middleware' => 'role:admin|member'], function () {
 });
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/categori/{id}',array('as'=>'showperkategori','uses'=>'TampilanController@showperkategori'));
+
+Route::middleware('cors')->group(function(){
+	Route::get('/listdata','ApiController@listdata');
+});

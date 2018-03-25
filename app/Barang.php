@@ -8,7 +8,7 @@ use Session;
 class Barang extends Model
 {
     //
-    protected $fillable =  ['logo','type','harga','stock','kategori_id','brand_id'];
+    protected $fillable =  ['logo','type','harga','stock','kategori_id','brand_id','keterangan'];
 
     public function Kategori()
 	    {

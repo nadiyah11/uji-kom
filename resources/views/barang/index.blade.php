@@ -19,10 +19,7 @@
 								<th>No </th>
 								<th>Gambar Barang </th>
 								<th>Type Barang </th>
-								<th>Harga Barang </th>
 								<th>Stock Barang </th>
-								<th>Kategori Barang </th>
-								<th>Brand Barang </th>
 								<th></th>
 								<th>Action</th>
 								<th></th>
@@ -36,10 +33,7 @@
 							<td>{{$no++}}</td>
 							<td><img src="{{asset('img/'.$data->logo.'')}}" height="100" width="100"></td>
 							<td>{{$data->type}}</td>
-							<td>Rp.{{number_format($data->harga,0,",",".").",-"}}</td>
 							<td>{{$data->stock}} Pcs</td>
-							<td>{{$data->Kategori->kategori}}</td>
-							<td>{{$data->Brand->brand}}</td>
 
 
 							<td>

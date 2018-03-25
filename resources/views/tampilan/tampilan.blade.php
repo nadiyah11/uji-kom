@@ -115,7 +115,10 @@
           <h3 class="section-title"></h3>
           <span class="section-divider"></span>
           <p class="section-description">
+            <div class="row">
               @yield('kategori')
+            </div>
+              
           </p>
         </div>
       </section>

@@ -1,27 +1,5 @@
 @extends('layouts.tabel')
-@section('content')
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="breadcrumb">
-				<li><a href="{{ url('/home') }}">Home</a></li>
-				</ul>
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					<h2 class="panel-title">Laporan</h2>
-					
-					</div>
 
-					<div class="panel-body">
-						{!! Form::open(['url' => 'download-pdf','method' => 'post', 'class'=>'form-horizontal']) !!}
-							@include('laporan._form')
-						{!! Form::close() !!}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-@endsection
 @section('content')
 
 	<div class="container">
@@ -38,9 +16,17 @@
 						<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							
-								<h3>Laporan</h3><br>
+								<h3>Laporan</h3>
 								
-								<a class="btn btn-primary" href="{{ url('/download-pdf') }}">PDF </a>
+<!-- 								<a class="btn btn-primary" href="{{ url('/download-pdf') }}">PDF </a> -->
+								<form action="{{ url('/download-pdf') }}" method="get">
+									
+									<input type="hidden" name="from" value="{{$from}}">
+									<input type="hidden" name="to" value="{{$to}}">
+
+									
+									<input type="submit" name="Simpan" value="Pdf" class="btn btn-primary">
+								
 								<center><h4>Total Uang Masuk Dari Tanggal {{$from}} Sampai {{$to}}: Rp.{{number_format($sum)}},-</h4></center>
 
 							<tr>
@@ -76,6 +62,7 @@
 							@endforeach
 							
 						</tbody>
+						</form>
 					</table>
 					</div>
 				</div>

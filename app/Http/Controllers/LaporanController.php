@@ -39,24 +39,24 @@ class LaporanController extends Controller
 
 
 
-    // public function laporan(Request $request){
-    //     $from = $request->from;
-    //     $to = $request->to;
-    //     $laporan = Tran_masuk::whereBetween('created_at',[$from , $to])->get();
-    //     $sum = $laporan->sum('totals');
-    //     return view('laporan.laporan',compact('laporan','from','to','sum'));
+    public function laporan(Request $request){
+        $from = $request->from;
+        $to = $request->to;
+        $laporan = Tran_masuk::whereBetween('created_at',[$from , $to])->get();
+        $sum = $laporan->sum('totals');
+        return view('laporan.laporan',compact('laporan','from','to','sum'));
       
-    // }
-    // public function keluar(Request $request)
-    // {
-    //     //
-    //     $from = $request->from;
-    //     $to = $request->to;
+    }
+    public function keluar(Request $request)
+    {
+        //
+        $from = $request->from;
+        $to = $request->to;
         
-    //     $laporan = Tran_keluar::whereBetween('created_at',[$from , $to])->get();
-    //     $sum = $laporan->sum('totalk');
-    //     return view('laporan.laporan_keluar',compact('laporan','from','to','sum'));
-    // }
+        $laporan = Tran_keluar::whereBetween('created_at',[$from , $to])->get();
+        $sum = $laporan->sum('totalk');
+        return view('laporan.laporan_keluar',compact('laporan','from','to','sum'));
+    }
 
 
     
@@ -77,9 +77,11 @@ class LaporanController extends Controller
 
     {
 
-        
-        $laporan = Tran_keluar::all();
-        $pdf = PDF::loadView('laporan.pdfViewKeluar',compact('laporan'));
+        $from = $request->from;
+        $to = $request->to;
+        $laporan = Tran_keluar::whereBetween('created_at',[$from , $to])->get();
+        $sum = $laporan->sum('totalk');
+        $pdf = PDF::loadView('laporan.pdfViewKeluar',compact('laporan','from','to','sum'));
         return $pdf->download('LaporanKeluar.pdf');
 
 

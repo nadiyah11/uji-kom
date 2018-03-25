@@ -51,6 +51,7 @@ class BarangController extends Controller
             'stock' => 'numeric',
             'kategori_id' => 'required',
             'brand_id' => 'required',
+            'keterangan' => 'required',
         ]);
         $barang = Barang::create($request->except('logo'));
         // isi field logo jika ada logo yang diupload
@@ -118,6 +119,7 @@ class BarangController extends Controller
             'stock' => 'numeric',
             'kategori_id' => 'required',
             'brand_id' => 'required',
+            'keterangan' => 'required',
         ]);
         $barang = Barang::find($id);
         $barang -> update($request->all());
