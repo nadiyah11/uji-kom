@@ -42,7 +42,7 @@
 <div class="form-group{{ $errors->has('keterangan') ? ' has-error' : '' }}">
 	{!! Form::label('keterangan', 'Keterangan Barang', ['class'=>'col-md-2 control-label']) !!}
 	<div class="col-md-4">
-		{!! Form::textarea('keterangan', null, ['class'=>'form-control']) !!}
+		{!! Form::textarea('keterangan', null,['id'=>'summary-ckeditor'], ['class'=>'form-control']) !!}
 		{!! $errors->first('keterangan', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>

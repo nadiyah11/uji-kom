@@ -171,6 +171,7 @@ return [
         Laratrust\LaratrustServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
