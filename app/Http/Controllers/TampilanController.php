@@ -7,6 +7,7 @@ use App\Barang;
 use App\Kategori;
 use App\Brand;
 use App\Supplier;
+use App\Contact;
 
 class TampilanController extends Controller
 {
@@ -21,16 +22,18 @@ class TampilanController extends Controller
         $tampil1 = Kategori::all();
         $tampil = Barang::orderBy('created_at','desc')->paginate(4);
         $supplier = Supplier::orderBy('created_at','desc')->paginate(6);
-        return view('tampilan.stock')->with(compact('tampil','supplier','tampil1'));
+        $contact = Contact::all();
+        return view('tampilan.stock')->with(compact('tampil','supplier','tampil1','contact'));
     }
     public function showperkategori($id)
     {
         $tampil1 = Kategori::all();
         $brand = Brand::all();
+        $contact = Contact::all();
         $filter = Barang::where('kategori_id','=',$id)->paginate(5);
         $tampil = Barang::orderBy('created_at','desc')->paginate(4);
         $supplier = Supplier::orderBy('created_at','desc')->paginate(6);
-        return view('tampilan.kategori')->with(compact('tampil','supplier','tampil1','filter','brand','filter1'));
+        return view('tampilan.kategori')->with(compact('tampil','supplier','tampil1','filter','brand','filter1','contact'));
     }
 
 

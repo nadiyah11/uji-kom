@@ -11,6 +11,44 @@
 
 
 @endsection
+
+@section('ketper')
+	<div class="col-lg-6 content" data-aos="fade-left">
+            <h2>Klik n Klik</h2>
+            <p>
+            	@foreach($contact as $contactper)
+            		<font face="Kristen ITC">{{$contactper->ketper}}</font>
+              	@endforeach
+            </p>
+          </div>
+@endsection
+@section('contact')
+
+          <div class="col-lg-4 col-md-4">
+            <div class="contact-about">
+              <h3>Klik n Klik</h3>
+              <p>@foreach($contact as $contact)
+              	
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="info">
+              <div>
+                <i class="ion-ios-location-outline"></i>
+                <p>
+              		<font face="Kristen ITC"> Telp :{{$contact->conper}}</font></p>
+              <div>
+                <i class="ion-ios-telephone-outline"></i>
+                <p>
+              		<font face="Kristen ITC"> Alamat :{{$contact->alamat}}</font></p>
+              	@endforeach
+              </div>
+            </div>
+          </div>
+@endsection
+
 @section('contentt')
     @foreach($supplier as $dataa)
           <div class="col-md-2">

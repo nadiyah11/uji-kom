@@ -42,7 +42,7 @@
 							Harga Barang
 						</div>
 						<div class="col-md-6">
-							{{$barang->harga}}
+							Rp.{{number_format($barang->hrga,0,",",".").",-"}}
 						</div>
 					</div>
 					<div class="form-group">

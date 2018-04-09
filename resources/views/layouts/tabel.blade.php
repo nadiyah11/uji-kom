@@ -107,7 +107,7 @@
                 <i class="fa fa-group"></i> <span>Master</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                  <li><a href="{{ route('user.index') }}"><i class="fa fa-user"></i>Pegguan</a></li>
+                  <li><a href="{{ route('user.index') }}"><i class="fa fa-user"></i>Pengguna</a></li>
                   <li><a href="{{ url('/index2') }}"><i class="fa fa-group"></i>Karyawan</a></li>
                   <li><a href="{{ route('supplier.index') }}"><i class="fa fa-desktop"></i>Supplier</a></li>
               </ul>

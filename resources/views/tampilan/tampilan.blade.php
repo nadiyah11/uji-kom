@@ -128,23 +128,7 @@
             <img src="{!! asset('Avilon/img/about-img.jpg') !!}" alt="">
           </div>
 
-          <div class="col-lg-6 content" data-aos="fade-left">
-            <h2>Klik n Klik</h2>
-            <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-
-            <ul>
-              <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="ion-android-checkmark-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-            </ul>
-
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Libero justo laoreet sit amet cursus sit amet dictum sit. Commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec
-            </p>
-          </div>
+          @yield('ketper')
         </div>
 
       </div>
@@ -250,40 +234,7 @@
     <section id="contact">
       <div class="container">
         <div class="row" data-aos="fade-up">
-
-          <div class="col-lg-4 col-md-4">
-            <div class="contact-about">
-              <h3>Klik n Klik</h3>
-              <p>Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
-              <div class="social-links">
-                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="info">
-              <div>
-                <i class="ion-ios-location-outline"></i>
-                <p>Jl.GegerKalong<br>Blok 4a</p>
-              </div>
-
-              <div>
-                <i class="ion-ios-email-outline"></i>
-                <p>www.kliknklik.com</p>
-              </div>
-
-              <div>
-                <i class="ion-ios-telephone-outline"></i>
-                <p>+6289 6629 79668</p>
-              </div>
-
-            </div>
-          </div>
+          @yield('contact')
 
         </div>
 

@@ -17,6 +17,7 @@ Route::group(['middleware' => 'role:admin'], function () {
 	Route::get('/index2','KaryawanController@testing');
 	Route::resource('tran_masuk','Tran_masukController');
 	Route::resource('tran_keluar','Tran_keluarController');
+	Route::resource('contact','ContactController');
 	Route::resource('supplier','SupplierController');
 	Route::resource('laporan','LaporanController');
 	Route::post('/laporann','LaporanController@laporan');
@@ -48,4 +49,6 @@ Route::get('/categori/{id}',array('as'=>'showperkategori','uses'=>'TampilanContr
 
 Route::middleware('cors')->group(function(){
 	Route::get('/listdata','ApiController@listdata');
+	Route::get('/contactandro','ApiController@contact');
+	Route::get('/show/{id}','ApiController@showdata');
 });
