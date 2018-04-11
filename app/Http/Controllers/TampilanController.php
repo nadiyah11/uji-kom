@@ -67,6 +67,14 @@ class TampilanController extends Controller
     public function show($id)
     {
         //
+        $tampil1 = Kategori::all();
+        $brand = Brand::all();
+        $contact = Contact::all();
+        $filter = Barang::where('kategori_id','=',$id)->paginate(5);
+        $tampil = Barang::orderBy('created_at','desc')->paginate(4);
+        $supplier = Supplier::orderBy('created_at','desc')->paginate(6);
+        return view('tampilan.show')->with(compact('tampil','supplier','tampil1','filter','brand','filter1','contact'));
+
     }
 
     /**

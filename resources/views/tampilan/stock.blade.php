@@ -1,9 +1,9 @@
-@extends('tampilan.tampilan')
+  @extends('tampilan.tampilan')
 @section('content')
 @foreach($tampil as $data)
 <div class="col-lg-6 col-md-6 box" data-aos="fade-left">
 		
-				<img src="{{asset('img/'.$data->logo.'')}}" class="img-responsive" alt="">
+				<img src="{{asset('img/'.$data->logo.'')}}" class="img-responsive" alt="" width="300px" height="200px">
 		<a href="#"><p>{{ $data->Kategori->kategori }}  Type :  {{ $data->type }}</p></a>
 		<br><p> Tersedia : {{ $data->stock }}</p>
 </div>
@@ -12,7 +12,7 @@
 @section('contentt')
     @foreach($supplier as $dataa)
           <div class="col-md-2">
-               <img src="{{asset('img/'.$dataa->logo_per.'')}}" alt=""  data-aos="fade-up">
+               <img src="{{asset('img/'.$dataa->logo_per.'')}}" alt="" width="300px" height="200px"  data-aos="fade-up">
           </div>
     @endforeach
 @endsection
@@ -21,7 +21,7 @@
             <h2>Klik n Klik</h2>
             <p>
             	@foreach($contact as $contactper)
-            		<font face="Kristen ITC">{{$contactper->ketper}}</font>
+            		<font face="Kristen ITC">{!! $contactper->ketper !!}</font>
               	@endforeach
             </p>
           </div>

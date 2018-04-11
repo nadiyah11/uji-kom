@@ -17,7 +17,7 @@
             <h2>Klik n Klik</h2>
             <p>
             	@foreach($contact as $contactper)
-            		<font face="Kristen ITC">{!! $contactper->ketper !!}</font>
+            		<font face="Kristen ITC">{{$contactper->ketper}}</font>
               	@endforeach
             </p>
           </div>
@@ -61,31 +61,9 @@
 @section('kategori')
 
 @foreach($filter as $filter)
-<div class="modal fade" id="edit{{$filter->id}}">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"></h4>
-              </div>
-              <div class="modal-body">
-                <img src="{{asset('img/'.$filter->logo.'')}}" class="img-responsive" alt="" width="300px" height="200px"><br>
-                  <p>Type Barang : {{$filter->type}} <br> Brand : {{$filter->Brand->brand}} <br> Harga : Rp.{{number_format($filter->harga,0,",",".").",-"}}<br> Spesifikasi : {!! $filter->keterangan !!}</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->
-        <div class="col-lg-3 col-md-3 box" data-aos="fade-right">
-        	 <a data-toggle="modal" href="#edit{{$filter->id}}" ><img src="{{asset('img/'.$filter->logo.'')}}" class="img-responsive" alt="" width="300px" height="200px"></a>
-           <p>Type Barang : {{$filter->type}} <br> Brand : {{$filter->Brand->brand}} <br></p>
-        	
-        </div>
+<div class="col-lg-3 col-md-3 box" data-aos="fade-right">
+	 <a href="/detail/{{$filter->id}}"><img src="{{asset('img/'.$filter->logo.'')}}" class="img-responsive" alt="" width="300px" height="200px"></a>
+	<p>Type Barang : {{$filter->type}} <br> Brand : {{$filter->Brand->brand}} <br> Harga : Rp.{{number_format($filter->harga,0,",",".").",-"}}<br> Spesifikasi : {{$filter->keterangan}}</p>
+</div>
 @endforeach
 @endsection

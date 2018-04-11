@@ -9,7 +9,8 @@
 				</ul>
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<a class="btn btn-primary" href="/bagian/create">Tambah Data</a>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah">Tambah
+						</button>
 						<div class="panel-title pull-right"><a href="{{URL::previous()}}">Kembali</a></div>
 					</div>
 
@@ -26,12 +27,34 @@
 						<tbody>
 							
 							@foreach($bagian as $data)
+							<div class="modal fade" id="edit{{$data->id}}">
+					          <div class="modal-dialog">
+					            <div class="modal-content">
+					              <div class="modal-header">
+					                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					                  <span aria-hidden="true">&times;</span></button>
+					                <h4 class="modal-title">Bagian</h4>
+					              </div>
+					              <div class="modal-body">
+					               {!! Form::model($data, ['url' => route('bagian.update', $data->id),'method'=>'put', 'class'=>'form-horizontal']) !!}
+									@include('bagian._form')
+									{!! Form::close() !!}
+					              </div>
+					              <div class="modal-footer">
+					                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+					              </div>
+					            </div>
+					            <!-- /.modal-content -->
+					          </div>
+					          <!-- /.modal-dialog -->
+					        </div>
+					        <!-- /.modal -->
 							<tr>
 							<td>{{$no++}}</td>
 							<td>{{$data->bagian}}</td>
 
 							<td>
-								<a class="btn btn-warning" href="/bagian/{{$data->id}}/edit">Edit</a>
+								<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit{{$data->id}}">Edit</button>
 								<td>
 									<form action="{{route('bagian.destroy', $data->id )}}" method="post">
 										<input type="hidden" name="_method" value="DELETE">
@@ -51,3 +74,25 @@
 		</div>
 	</div>
 @endsection
+<div class="modal fade" id="tambah">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Bagian</h4>
+              </div>
+              <div class="modal-body">
+                {!! Form::open(['url' => route('bagian.store'),'method' => 'post', 'class'=>'form-horizontal']) !!}
+							@include('bagian._form')
+						{!! Form::close() !!}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->

@@ -20,6 +20,7 @@ Route::group(['middleware' => 'role:admin'], function () {
 	Route::resource('contact','ContactController');
 	Route::resource('supplier','SupplierController');
 	Route::resource('laporan','LaporanController');
+	Route::resource('detail', 'TampilanController');
 	Route::post('/laporann','LaporanController@laporan');
 	Route::get('/laporankeluar','LaporanController@indexkeluar');
 	Route::post('/laporank','LaporanController@keluar');

@@ -30,6 +30,21 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+  <style>
+    .example-modal .modal {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      left: auto;
+      display: block;
+      z-index: 1;
+    }
+
+    .example-modal .modal {
+      background: transparent !important;
+    }
+  </style>
   </head>
   <body class="skin-purple">
     <div class="wrapper">
@@ -139,6 +154,9 @@
                   <li><a href="/laporan"><i class="fa fa-shopping-cart"></i>Laporan Data Masuk</a></li>
                   <li><a href="/laporankeluar"><i class="fa fa-shopping-cart"></i>Laporan Data Keluar</a></li>
               </ul>
+            </li>
+             <li>
+              <a href="/contact"><i class="fa fa-shopping-cart"></i>Contact</a>
             </li>
             @endrole
             @role('member')

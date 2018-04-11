@@ -13,12 +13,38 @@
 					</div>
 
 					<div class="panel-body">
-						{!! Form::open(['url' => route('tran_keluar.store'),'method' => 'post', 'class'=>'form-horizontal']) !!}
-							@include('tran_keluar._form')
-						{!! Form::close() !!}
+						<form action="{{route('tran_keluar.store')}}" method="post" id="insert_form"> {{csrf_field()}}
+							<table id="item_table" class="table table-bordered">
+								<tr id="last">
+									<th>Type Barang</th>
+									<th>Jumlah</th>
+									<th><button type="button" name="add" class="btn btn-success btn-sm add" onclick="addrow()">Tambah</button></th>
+								</tr>
+								</table>
+								<br>
+								<div align="center">
+									<input type="submit" name="submit" class="btn btn-info" value="simpan">
+								</div>
+							
+						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 @endsection
+
+<script>
+	function addrow() {
+		var no = $('item_table tr').length;
+		var html = '';
+		html +='<tr id="row_'+no+'">';
+		html +='<td><select name="barang_id[]" class="form-control">@foreach ($barang as $barang) <option value="{{$barang->id}}">{{$barang->type}}</option>@endforeach</select></td>';
+		html +='<td><input type="text" name="jumlahk[]" class="form-control jumlahk"></td>';
+		html +='<td><button type="button" class="btn btn-danger btn-sm" onclick="remove('+no+')">Hapus</button></td></tr>';
+		$('#last').after(html);
+	}
+	function remove(no){
+		$('#row_'+no).remove();
+	}
+</script>

@@ -9,7 +9,8 @@
 				</ul>
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<a class="btn btn-primary" href="/karyawan/create">Tambah Data</a>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah">Tambah
+						</button>
 						<div class="panel-title pull-right"><a href="{{URL::previous()}}">Kembali</a></div>
 					</div>
 
@@ -30,6 +31,7 @@
 						<tbody>
 							
 							@foreach($karyawan as $data)
+
 							<tr>
 							<td>{{$no++}}</td>
 							<td>{{$data->nama_kar}}</td>
@@ -39,7 +41,7 @@
 							<td>{{$data->Bagian->bagian}}</td>
 
 							<td>
-								<a class="btn btn-warning" href="/karyawan/{{$data->id}}/edit">Edit</a>
+								<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit{{$data->id}}">Edit</button>
 								<td>
 									<a class="btn btn-primary" href="/karyawan/{{$data->id}}">Detail</a>
 								</td>
@@ -62,3 +64,25 @@
 		</div>
 	</div>
 @endsection
+<div class="modal fade" id="tambah">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Kategori</h4>
+              </div>
+              <div class="modal-body">
+                {!! Form::open(['url' => route('karyawan.store'),'method' => 'post', 'class'=>'form-horizontal']) !!}
+							@include('karyawan._form')
+						{!! Form::close() !!}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->

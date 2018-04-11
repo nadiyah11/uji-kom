@@ -34,7 +34,8 @@ class Tran_keluarController extends Controller
     public function create()
     {
         //
-        return view('tran_keluar.create');
+        $barang = Barang::all();
+        return view('tran_keluar.create',compact('barang'));
     }
 
     /**
@@ -46,37 +47,44 @@ class Tran_keluarController extends Controller
     public function store(Request $request)
     {
         //
-         $this->validate($request, [
-            'barang_id' => 'required|exists:barangs,id',
-            'jumlahk' => 'required||numeric|min:0']);
-        $user = Auth::user();
-        $tran_keluar = new Tran_Keluar;
-        $tran_keluar->user_id=$user->id;
-        $barang = Barang::findOrFail($request->barang_id);
-        if ($request->jumlahk < $barang->stock) {
-        
-        $tran_keluar->barang_id=$request->barang_id;
+         // $this->validate($request, [
+         //    'barang_id' => 'required|exists:barangs,id',
+         //    'jumlahk' => 'required||numeric|min:0']);
+         for ($id = 0; $id < count($request->barang_id); $id++) { 
+            $user = Auth::user();
+            $tran_keluar = new Tran_Keluar;
+            $tran_keluar->user_id=$user->id;
+            $barang = Barang::findOrFail($request->barang_id[$id]);
+            if ($request->jumlahk[$id] < $barang->stock) {
+            
+            $tran_keluar->barang_id=$request->barang_id[$id];
 
-        $barang->stock = $barang->stock - $request->jumlahk;
-        $tran_keluar->totalk = $barang->harga * $request->jumlahk;
-        $barang->save();
-        
-        $tran_keluar->jumlahk=$request->jumlahk;
-        $tran_keluar->save();
+            $barang->stock = $barang->stock - $request->jumlahk[$id];
+            $tran_keluar->totalk = $barang->harga * $request->jumlahk[$id];
+            $barang->save();
+            
+            $tran_keluar->jumlahk=$request->jumlahk[$id];
+            $tran_keluar->save();
 
-        Session::flash("flash_notification", [
-        "level"=>"success",
-        "message"=>"Berhasil menyimpan data yang keluar pada : $tran_keluar->created_at, barang :$tran_keluar->barang_id,$tran_keluar->jumlahk"
-        ]);
-        return redirect()->route('tran_keluar.index');
+            Session::flash("flash_notification", [
+            "level"=>"success",
+            "message"=>"Berhasil menyimpan data yang keluar pada : $tran_keluar->created_at, barang :$tran_keluar->barang_id,$tran_keluar->jumlahk"
+            ]);
+            return redirect()->route('tran_keluar.index');
+            }
+            
+            else {
+            Session::flash("flash_notification", [
+            "level"=>"danger",
+            "message"=>"Data yang dimasukkan tidak sesuai,silahkan masukan data kembali!!!!"
+            ]);
+            return redirect()->route('tran_keluar.index');
+            }
         }
-        else {
-        Session::flash("flash_notification", [
-        "level"=>"danger",
-        "message"=>"Data yang dimasukkan tidak sesuai,silahkan masukan data kembali!!!!"
-        ]);
-        return redirect()->route('tran_keluar.index');
-        }
+
+        
+
+        
         
         
     }
