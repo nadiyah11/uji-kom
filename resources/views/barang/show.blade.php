@@ -74,7 +74,7 @@
 							Spesifikasi  Barang
 						</div>
 						<div class="col-md-6">
-							{{$barang->keterangan}}
+							{!! $barang->keterangan !!}
 						</div>
 					</div>
 

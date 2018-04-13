@@ -20,8 +20,8 @@
 								<th>Gambar Barang </th>
 								<th>Type Barang </th>
 								<th>Stock Barang </th>
-								<th></th>
 								<th>Action</th>
+								<th></th>
 								<th></th>
 							</tr>
 						</thead>
@@ -35,12 +35,14 @@
 							<td>{{$data->type}}</td>
 							<td>{{$data->stock}} Pcs</td>
 
-
+							@role('admin')
 							<td>
 								<a class="btn btn-warning" href="/barang/{{$data->id}}/edit">Edit</a></td>
+							@endrole
 								<td>
 									<a class="btn btn-primary" href="/barang/{{$data->id}}">Detail</a>
 								</td>
+								@role('admin')
 								<td>
 									<form action="{{route('barang.destroy', $data->id )}}" method="post">
 										<input type="hidden" name="_method" value="DELETE">
@@ -49,7 +51,7 @@
 										{{csrf_field()}}
 									</form>
 								</td>
-							
+								@endrole
 							</tr>
 							@endforeach
 						</tbody>

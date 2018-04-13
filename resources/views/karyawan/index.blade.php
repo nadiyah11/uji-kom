@@ -41,7 +41,7 @@
 							<td>{{$data->Bagian->bagian}}</td>
 
 							<td>
-								<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit{{$data->id}}">Edit</button>
+								<a class="btn btn-warning" href="/karyawan/{{$data->id}}/edit">Edit</a>
 								<td>
 									<a class="btn btn-primary" href="/karyawan/{{$data->id}}">Detail</a>
 								</td>

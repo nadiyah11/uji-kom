@@ -153,25 +153,47 @@
                   <li><a href="{{ route('tran_keluar.index') }}"><i class="fa fa-shopping-cart"></i>Data Keluar</a></li>
               </ul>
             </li>
+            <!-- <li class="treeview">
+              <a href="#">
+                <i class="fa fa-shopping-cart"></i> <span>Laporan</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                  <li><a href="/admin/laporanmasuk"><i class="fa fa-shopping-cart"></i>Laporan Data Masuk</a></li>
+                  <li><a href="/admin/laporankeluar"><i class="fa fa-shopping-cart"></i>Laporan Data Keluar</a></li>
+              </ul>
+            </li> -->
+            <li>
+              <a href="/contact"><i class="fa fa-shopping-cart"></i>Contact</a>
+            </li>
+            @endrole
+            @role('karyawan')<li class="treeview">
+              <a href="#">
+                <i class="fa fa-pencil-square-o"></i> <span>Barang</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                  <li><a href="{{ route('kategori.index') }}"><i class="fa fa-pencil-square-o"></i>Kategori</a></li>
+                  <li><a href="{{ route('brand.index') }}"><i class="fa fa-pencil-square-o"></i>Brand</a></li>
+                  <li><a href="{{ route('barang.index') }}"><i class="fa fa-laptop"></i>Barang</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-shopping-cart"></i> <span>Transaksi</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                  <li><a href="{{ route('tran_masuk.index') }}"><i class="fa fa-shopping-cart"></i>Data Masuk</a></li>
+                  <li><a href="{{ route('tran_keluar.index') }}"><i class="fa fa-shopping-cart"></i>Data Keluar</a></li>
+              </ul>
+            </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-shopping-cart"></i> <span>Laporan</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                  <li><a href="/laporan"><i class="fa fa-shopping-cart"></i>Laporan Data Masuk</a></li>
+                  <li><a href="/laporanmasuk"><i class="fa fa-shopping-cart"></i>Laporan Data Masuk</a></li>
                   <li><a href="/laporankeluar"><i class="fa fa-shopping-cart"></i>Laporan Data Keluar</a></li>
               </ul>
             </li>
-            <li>
-              <a href="/contact"><i class="fa fa-shopping-cart"></i>Contact</a>
-            </li>
-            @endrole
-            @role('member')
-              <li><a href="{{ route('kategori.index') }}"><i class="fa fa-pencil-square-o"></i>Kategori</a></li>
-              <li><a href="{{ route('brand.index') }}"><i class="fa fa-pencil-square-o"></i>Brand</a></li>
-               <li><a href="{{ route('barang.index') }}"><i class="fa fa-laptop"></i>Barang</a></li>
-              <li><a href="{{ route('tran_masuk.index') }}"><i class="fa fa-shopping-cart"></i>Data Masuk</a></li>
-              <li><a href="{{ route('tran_keluar.index') }}"><i class="fa fa-shopping-cart"></i>Data Keluar</a></li>
             @endrole
             @endif
           </ul>
@@ -203,7 +225,7 @@
         <div class="pull-right hidden-xs">
           <b>SMK ASSALAAM</b> Bandung
         </div>
-        <strong>Admin Klik n Klik .Managemen.</strong> Perangkat Komputer.
+        <strong>Klik n Klik .Managemen.</strong> Perangkat Komputer.
       </footer>
     </div><!-- ./wrapper -->
 

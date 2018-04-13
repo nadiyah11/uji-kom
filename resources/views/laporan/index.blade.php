@@ -13,7 +13,7 @@
 					</div>
 
 					<div class="panel-body">
-						{!! Form::open(['url' => 'laporann','method' => 'post', 'class'=>'form-horizontal']) !!}
+						{!! Form::open(['url' => 'hasillaporanmasuk','method' => 'post', 'class'=>'form-horizontal']) !!}
 							@include('laporan._form')
 						{!! Form::close() !!}
 					</div>

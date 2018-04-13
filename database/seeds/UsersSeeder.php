@@ -19,11 +19,11 @@ class UsersSeeder extends Seeder
 		$adminRole->name = "admin";
 		$adminRole->display_name = "Admin";
 		$adminRole->save();
-		// Membuat role member
-		$memberRole = new Role();
-		$memberRole->name = "member";
-		$memberRole->display_name = "Member";
-		$memberRole->save();
+		// Membuat role karyawan
+		$karyawanRole = new Role();
+		$karyawanRole->name = "karyawan";
+		$karyawanRole->display_name = "Karyawan";
+		$karyawanRole->save();
 		// Membuat sample admin
 		$admin = new User();
 		$admin->name = 'Admin Klik n Klik';
@@ -31,12 +31,12 @@ class UsersSeeder extends Seeder
 		$admin->password = bcrypt('rahasia');
 		$admin->save();
 		$admin->attachRole($adminRole);
-		// Membuat sample member
-		$member = new User();
-		$member->name = "Sample Member";
-		$member->email = 'member@gmail.com';
-		$member->password = bcrypt('rahasia');
-		$member->save();
-		$member->attachRole($memberRole);
+		// Membuat sample karyawan
+		$karyawan = new User();
+		$karyawan->name = "Sample Karyawan";
+		$karyawan->email = 'karyawan@gmail.com';
+		$karyawan->password = bcrypt('rahasia');
+		$karyawan->save();
+		$karyawan->attachRole($karyawanRole);
     }
 }

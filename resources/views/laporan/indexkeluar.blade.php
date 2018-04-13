@@ -12,7 +12,7 @@
 					</div>
 
 					<div class="panel-body">
-						{!! Form::open(['url' => 'laporank','method' => 'post', 'class'=>'form-horizontal']) !!}
+						{!! Form::open(['url' => 'hasillaporankeluar','method' => 'post', 'class'=>'form-horizontal']) !!}
 							@include('laporan._laporan')
 						{!! Form::close() !!}
 					</div>

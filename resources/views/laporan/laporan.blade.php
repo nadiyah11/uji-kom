@@ -27,7 +27,7 @@
 									
 									<input type="submit" name="Simpan" value="Pdf" class="btn btn-primary">
 								
-								<center><h4>Total Uang Masuk Dari Tanggal {{$from}} Sampai {{$to}}: Rp.{{number_format($sum)}},-</h4></center>
+								<center><h4>Total Uang Pembayaran Dari Tanggal {{$from}} Sampai {{$to}}: Rp.{{number_format($sum)}},-</h4></center>
 
 							<tr>
 								<th>No </th>

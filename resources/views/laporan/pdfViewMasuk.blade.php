@@ -14,7 +14,7 @@
 	</style>
 </head>
 <body>
-			<center><h4>Total Uang Masuk Dari Tanggal {{$from}} Sampai {{$to}}: Rp.{{number_format($sum)}},-</h4></center>
+			<center><h4>Total Uang Pembayaran Dari Tanggal {{$from}} Sampai {{$to}}: Rp.{{number_format($sum)}},-</h4></center>
 						<table>
 						<tr>
 							

@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">LOGIN ANDA BERHASIL</div>
 
@@ -12,8 +12,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    <img src="{{asset('img/fb29918f39cbef5d57e63a7acfa19630.jpg')}}">
+                    <div class="col-md-12">
+                    <img src="{{asset('img/monitor.png')}}" width="60%">
+                    </div>
                 </div>
                 </div>
             </div>

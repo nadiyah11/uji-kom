@@ -64,7 +64,7 @@ class UserController extends Controller
         "message"=>"Berhasil menyimpan data pengguna $user->name"
         ]);
         // dd($user);
-        return redirect('user');
+        return redirect()->route('user.index');
     }
 
     /**
@@ -116,6 +116,6 @@ class UserController extends Controller
         "level"=>"success",
         "message"=>"Pengguna $user->name berhasil dihapus"
         ]);
-        return redirect('user');
+        return redirect()->route('user.index');
     }
 }

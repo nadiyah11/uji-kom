@@ -54,6 +54,7 @@
 
 							<td>
 								<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit{{$data->id}}">Edit</button>
+								@role('admin')
 								<td>
 									<form action="{{route('kategori.destroy', $data->id )}}" method="post">
 										<input type="hidden" name="_method" value="DELETE">
@@ -62,6 +63,7 @@
 										{{csrf_field()}}
 									</form>
 								</td>
+								@endrole
 							</td>
 							</tr>
 							@endforeach
